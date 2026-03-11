@@ -1,0 +1,179 @@
+.section {
+    padding: 6rem 2rem;
+    background: var(--off-white);
+}
+
+.sectionInner {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.sectionHeaderCenter {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.sectionLabel {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 700;
+    color: var(--blue);
+    margin-bottom: 1.25rem;
+}
+
+.sectionLabel::before {
+    content: '';
+    width: 20px;
+    height: 2px;
+    background: var(--blue);
+    border-radius: 1px;
+}
+
+.sectionTitle {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.sectionSubtitle {
+    font-size: 1.05rem;
+    color: var(--gray-500);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.clarityGrid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.5rem;
+}
+
+.clarityIntro {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.clarityIntro p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--navy);
+}
+
+.clarityCard {
+    grid-column: span 2;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    padding: 2rem;
+    text-align: center;
+    transition: all var(--transition);
+}
+
+/* Center the last 2 cards under a 3-card row */
+.clarityCard:nth-child(5) {
+    grid-column: 2 / 4;
+}
+
+.clarityCard:nth-child(6) {
+    grid-column: 4 / 6;
+}
+
+.clarityCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(10, 22, 40, 0.06);
+    border-color: transparent;
+}
+
+.clarityIcon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 1.25rem;
+    background: var(--blue-glow);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blue);
+}
+
+.clarityIcon svg {
+    width: 22px;
+    height: 22px;
+}
+
+.clarityCard h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: -0.01em;
+}
+
+@media (max-width: 1024px) {
+    .clarityGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .clarityCard {
+        grid-column: span 1;
+    }
+
+    .clarityCard:nth-child(5),
+    .clarityCard:nth-child(6) {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 640px) {
+    .section {
+        padding: 4rem 1.25rem;
+    }
+
+    .sectionTitle {
+        font-size: 1.8rem;
+    }
+
+    .sectionHeaderCenter {
+        margin-bottom: 2.5rem;
+    }
+
+    .clarityGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+
+    .clarityIntro {
+        margin-bottom: 0.5rem;
+    }
+
+    .clarityIntro p {
+        font-size: 0.95rem;
+    }
+
+    .clarityCard {
+        padding: 1.25rem 1rem;
+    }
+
+    .clarityIcon {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 0.75rem;
+    }
+
+    .clarityIcon svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .clarityCard h3 {
+        font-size: 0.85rem;
+    }
+}

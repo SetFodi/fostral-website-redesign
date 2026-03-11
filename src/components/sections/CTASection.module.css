@@ -1,0 +1,110 @@
+.ctaSection {
+    padding: 6rem 2rem;
+    background: var(--off-white);
+}
+
+.ctaBox {
+    max-width: 1140px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    border-radius: 20px;
+    padding: 5rem 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 24px 64px rgba(10, 22, 40, 0.15);
+}
+
+.ctaBox::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(74, 138, 244, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.ctaBox::after {
+    content: '';
+    position: absolute;
+    bottom: -80px;
+    left: -80px;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(74, 138, 244, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.ctaContent {
+    position: relative;
+    z-index: 2;
+}
+
+.ctaContent h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+}
+
+.ctaContent p {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.65);
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.7;
+}
+
+.actionGroup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnCta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--white);
+    color: var(--navy);
+    padding: 0.85rem 2rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: all var(--transition);
+}
+
+.btnCta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.2);
+    background: var(--off-white);
+}
+
+@media (max-width: 640px) {
+    .ctaSection {
+        padding: 3rem 1.25rem;
+    }
+
+    .ctaBox {
+        padding: 3rem 1.5rem;
+    }
+
+    .ctaContent h2 {
+        font-size: 1.5rem;
+    }
+
+    .ctaContent p {
+        font-size: 0.95rem;
+    }
+
+    .btnCta {
+        width: 100%;
+        justify-content: center;
+        font-size: 0.9rem;
+        padding: 0.85rem 1.5rem;
+    }
+}

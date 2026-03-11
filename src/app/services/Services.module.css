@@ -1,0 +1,220 @@
+.main {
+    min-height: 100vh;
+    padding-top: 68px;
+    /* Navbar height */
+}
+
+.container {
+    max-width: 1000px;
+    /* Slightly narrower for readability of long text */
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Header */
+.header {
+    padding: 6rem 0 4rem;
+    background: var(--off-white);
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.sectionLabel {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 700;
+    color: var(--blue);
+    margin-bottom: 1.5rem;
+}
+
+.sectionLabel::before {
+    content: '';
+    width: 20px;
+    height: 2px;
+    background: var(--blue);
+    border-radius: 1px;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--navy);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+}
+
+.subtitle {
+    font-size: 1.15rem;
+    color: var(--gray-600);
+    max-width: 600px;
+    line-height: 1.7;
+}
+
+/* Steps */
+.stepsSection {
+    padding: 4rem 0;
+}
+
+.stepBlock {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 3rem;
+    padding: 4rem 0;
+    border-bottom: 1px solid var(--gray-200);
+    scroll-margin-top: 100px;
+}
+
+.stepNum {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: var(--blue);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+}
+
+.stepContent h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+}
+
+.stepContent p {
+    font-size: 1.05rem;
+    color: var(--gray-600);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.stepContent ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    background: var(--off-white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    padding: 1.5rem 2rem;
+}
+
+.stepContent ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+    color: var(--navy);
+    font-weight: 500;
+}
+
+.stepContent ul li:last-child {
+    margin-bottom: 0;
+}
+
+.stepContent ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--blue);
+}
+
+.outcome {
+    background: rgba(45, 108, 223, 0.05);
+    border-left: 4px solid var(--blue);
+    padding: 1.5rem;
+    border-radius: 0 8px 8px 0;
+    margin-top: 2rem;
+    font-weight: 500;
+}
+
+/* Closing CTA */
+.closingSection {
+    padding: 2rem 0 6rem;
+}
+
+.closingBox {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    border-radius: 20px;
+    padding: 4rem;
+    text-align: center;
+    color: var(--white);
+}
+
+.closingBox h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.closingBox p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 2.5rem;
+}
+
+.btnCta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--blue);
+    color: var(--white);
+    padding: 0.85rem 2.5rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all var(--transition);
+}
+
+.btnCta:hover {
+    transform: translateY(-2px);
+    background: var(--blue-bright);
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 4rem 0 3rem;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .stepBlock {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 2.5rem 0;
+    }
+
+    .stepContent h2 {
+        font-size: 1.4rem;
+    }
+
+    .stepContent p {
+        font-size: 0.95rem;
+    }
+
+    .stepContent ul {
+        padding: 1.25rem 1.5rem;
+    }
+
+    .closingBox {
+        padding: 3rem 1.5rem;
+    }
+
+    .closingBox h2 {
+        font-size: 1.5rem;
+    }
+}

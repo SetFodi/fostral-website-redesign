@@ -1,0 +1,147 @@
+.section {
+    padding: 6rem 2rem;
+    background: var(--white);
+}
+
+.sectionInner {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.sectionLabel {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 700;
+    color: var(--blue);
+    margin-bottom: 1rem;
+}
+
+.sectionLabel::before {
+    content: '';
+    width: 20px;
+    height: 2px;
+    background: var(--blue);
+    border-radius: 1px;
+}
+
+.sectionTitle {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
+}
+
+.sectionSubtitle {
+    font-size: 1.05rem;
+    color: var(--gray-500);
+    max-width: 520px;
+    line-height: 1.7;
+}
+
+.aboutGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+.aboutVisual {
+    position: relative;
+}
+
+.aboutCard {
+    background: var(--navy);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 3rem;
+    position: relative;
+    box-shadow: 0 24px 64px rgba(10, 22, 40, 0.12);
+}
+
+.aboutCard::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 30%;
+    right: 30%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--blue-bright), transparent);
+    border-radius: 1px;
+}
+
+.aboutCardIcon {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.aboutCardIcon svg {
+    width: 26px;
+    height: 26px;
+    color: var(--blue-bright);
+}
+
+.aboutCard h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+}
+
+.aboutCard p {
+    font-size: 0.92rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.7;
+}
+
+.aiModules {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 2rem;
+}
+
+.moduleTag {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    padding: 8px 14px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    transition: all var(--transition);
+}
+
+.moduleTag:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 1024px) {
+    .aboutGrid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .sectionTitle {
+        font-size: 2rem;
+    }
+
+    .aboutCard {
+        padding: 2rem;
+    }
+}

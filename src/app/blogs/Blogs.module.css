@@ -1,0 +1,110 @@
+.main {
+    min-height: 100vh;
+    padding-top: 68px;
+    background: var(--off-white);
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Header */
+.header {
+    padding: 6rem 0 4rem;
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.sectionLabel {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 700;
+    color: var(--blue);
+    margin-bottom: 1.5rem;
+}
+
+.sectionLabel::before {
+    content: '';
+    width: 20px;
+    height: 2px;
+    background: var(--blue);
+    border-radius: 1px;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--navy);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+}
+
+.subtitle {
+    font-size: 1.15rem;
+    color: var(--gray-600);
+    max-width: 680px;
+    line-height: 1.7;
+}
+
+/* Blog List / Empty State */
+.blogList {
+    flex: 1;
+    padding: 6rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.emptyState {
+    text-align: center;
+    background: var(--white);
+    border: 1px dashed var(--gray-300);
+    border-radius: 20px;
+    padding: 5rem 3rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.emptyIcon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.5;
+}
+
+.emptyState h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 1rem;
+}
+
+.emptyState p {
+    font-size: 1.05rem;
+    color: var(--gray-600);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.btnReturn {
+    display: inline-flex;
+    background: var(--navy);
+    color: var(--white);
+    padding: 0.8rem 1.8rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background var(--transition);
+}
+
+.btnReturn:hover {
+    background: var(--blue);
+}

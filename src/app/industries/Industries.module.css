@@ -1,0 +1,279 @@
+.main {
+    min-height: 100vh;
+    padding-top: 68px;
+    background: var(--off-white);
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Header */
+.header {
+    padding: 6rem 0 4rem;
+    background: var(--navy);
+    color: var(--white);
+}
+
+.sectionLabel {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 700;
+    color: var(--blue-bright);
+    margin-bottom: 1.5rem;
+}
+
+.sectionLabel::before {
+    content: '';
+    width: 20px;
+    height: 2px;
+    background: var(--blue-bright);
+    border-radius: 1px;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.75);
+    max-width: 700px;
+    line-height: 1.7;
+}
+
+/* Tabs Section */
+.tabsSection {
+    padding: 4rem 0;
+    background: var(--off-white);
+}
+
+.tabsLayout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+/* Sidebar List */
+.tabsList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: sticky;
+    top: 100px;
+    /* offset for natural scrolling */
+}
+
+.tabBtn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 1rem 1.25rem;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    text-align: left;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--gray-600);
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.tabBtn:hover {
+    background: rgba(10, 22, 40, 0.03);
+    color: var(--navy);
+}
+
+.activeTab {
+    background: var(--white);
+    border-color: var(--gray-200);
+    color: var(--blue);
+    box-shadow: 0 4px 12px rgba(10, 22, 40, 0.04);
+}
+
+.tabIcon {
+    font-size: 1.25rem;
+    opacity: 0.7;
+}
+
+.activeTab .tabIcon {
+    opacity: 1;
+}
+
+/* Content Area */
+.tabContent {
+    min-height: 500px;
+}
+
+.contentCard {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 20px;
+    padding: 4rem;
+    box-shadow: 0 24px 64px rgba(10, 22, 40, 0.04);
+    animation: fadeIn 0.4s ease;
+}
+
+.contentHeader {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--gray-100);
+}
+
+.contentIcon {
+    font-size: 2.5rem;
+}
+
+.contentHeader h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: -0.02em;
+}
+
+.contentText p {
+    font-size: 1.05rem;
+    color: var(--gray-600);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.contentText p:last-child {
+    margin-bottom: 0;
+}
+
+/* Closing CTA */
+.closingSection {
+    padding: 2rem 0 6rem;
+    background: var(--off-white);
+}
+
+.closingBox {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    border-radius: 20px;
+    padding: 4rem;
+    text-align: center;
+    color: var(--white);
+}
+
+.closingBox h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.closingBox p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 2.5rem;
+}
+
+.btnCta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--blue);
+    color: var(--white);
+    padding: 0.85rem 2.5rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all var(--transition);
+}
+
+.btnCta:hover {
+    transform: translateY(-2px);
+    background: var(--blue-bright);
+}
+
+@media (max-width: 1024px) {
+    .tabsLayout {
+        grid-template-columns: 250px 1fr;
+        gap: 2rem;
+    }
+
+    .contentCard {
+        padding: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 4rem 0 3rem;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .tabsLayout {
+        grid-template-columns: 1fr;
+    }
+
+    .tabsList {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 1rem;
+        position: relative;
+        top: 0;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .tabBtn {
+        flex-shrink: 0;
+        scroll-snap-align: start;
+        white-space: nowrap;
+        font-size: 0.85rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .contentCard {
+        padding: 1.75rem;
+    }
+
+    .contentHeader h2 {
+        font-size: 1.5rem;
+    }
+
+    .contentText p {
+        font-size: 0.95rem;
+    }
+
+    .closingBox {
+        padding: 3rem 1.5rem;
+    }
+
+    .closingBox h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1.25rem;
+    }
+}

@@ -1,0 +1,135 @@
+.section {
+    padding: 6rem 2rem;
+    background: var(--off-white);
+}
+
+.sectionInner {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.sectionHeaderCenter {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 4rem;
+}
+
+.sectionLabel {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 700;
+    color: var(--blue);
+    margin-bottom: 1rem;
+}
+
+.sectionLabel::before {
+    content: '';
+    width: 20px;
+    height: 2px;
+    background: var(--blue);
+    border-radius: 1px;
+}
+
+.sectionTitle {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
+}
+
+.sectionSubtitle {
+    font-size: 1.05rem;
+    color: var(--gray-500);
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.experienceGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.experCard {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    padding: 2.5rem 2rem;
+    transition: all var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.experCard::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--blue);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition);
+}
+
+.experCard:hover::after {
+    transform: scaleX(1);
+}
+
+.experCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(10, 22, 40, 0.08);
+    border-color: transparent;
+}
+
+.experNum {
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: var(--blue);
+    letter-spacing: 0.06em;
+    margin-bottom: 1.25rem;
+    opacity: 0.6;
+}
+
+.experCard h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.8rem;
+    letter-spacing: -0.01em;
+}
+
+.experCard p {
+    font-size: 0.9rem;
+    color: var(--gray-500);
+    line-height: 1.7;
+}
+
+.conclusionText {
+    text-align: center;
+    margin-top: 4rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--navy-light);
+    line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+    .experienceGrid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .sectionTitle {
+        font-size: 2rem;
+    }
+}

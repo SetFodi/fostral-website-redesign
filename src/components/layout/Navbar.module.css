@@ -1,0 +1,411 @@
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: background var(--transition), box-shadow var(--transition);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    box-shadow: 0 1px 0 rgba(10, 22, 40, 0.06);
+}
+
+.scrolled {
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 8px 24px rgba(10, 22, 40, 0.06);
+}
+
+.navInner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+    padding: 0 2rem;
+    position: relative;
+    /* For mega menu absolute positioning context */
+}
+
+/* Logo */
+.navLogo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: -0.02em;
+}
+
+.navLogoMark {
+    width: 30px;
+    height: 30px;
+    position: relative;
+}
+
+.navLogoMark::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--blue-bright), var(--blue));
+    border-radius: 8px;
+    transform: rotate(45deg) scale(0.72);
+}
+
+/* Links Container */
+.navLinks {
+    display: flex;
+    align-items: center;
+    gap: 2.2rem;
+    height: 100%;
+    /* Important for hover zones */
+}
+
+.navItem {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.navLink {
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--gray-600);
+    transition: color var(--transition);
+    letter-spacing: 0.01em;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    height: 100%;
+    padding: 0 0.25rem;
+}
+
+.navLink:hover {
+    color: var(--blue);
+}
+
+.chevron {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: translateY(-2px) rotate(45deg);
+    transition: transform var(--transition);
+}
+
+.navItem:hover .chevron {
+    transform: translateY(1px) rotate(225deg);
+}
+
+/* ───────────── MEGA MENU ───────────── */
+.megaMenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    border-top: 1px solid var(--gray-200);
+    box-shadow: 0 24px 64px rgba(10, 22, 40, 0.08);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    padding: 2.5rem 0;
+    border-radius: 0 0 16px 16px;
+    pointer-events: none;
+}
+
+.megaMenuOpen {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.megaContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 4rem;
+}
+
+.megaSidebar h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 0.75rem;
+}
+
+.megaSidebar p {
+    font-size: 0.9rem;
+    color: var(--gray-500);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.megaAction {
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--blue);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+.megaAction:hover {
+    color: var(--blue-bright);
+}
+
+/* Mega Grid (e.g., Services) */
+.megaGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.megaCard {
+    text-decoration: none;
+    display: block;
+    padding: 1.25rem;
+    border-radius: 12px;
+    transition: all var(--transition);
+    background: transparent;
+}
+
+.megaCard:hover {
+    background: var(--off-white);
+}
+
+.megaIcon {
+    width: 32px;
+    height: 32px;
+    background: var(--blue-glow);
+    color: var(--blue);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+}
+
+.megaCard h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.4rem;
+}
+
+.megaCard p {
+    font-size: 0.85rem;
+    color: var(--gray-500);
+    line-height: 1.5;
+}
+
+/* Mega List (e.g., Solutions) */
+.megaList {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.megaListCol h4 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.megaListCol a {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--gray-600);
+    text-decoration: none;
+    padding: 0.4rem 0;
+    transition: color var(--transition);
+    font-weight: 500;
+}
+
+.megaListCol a:hover {
+    color: var(--blue);
+}
+
+/* Nav Button */
+.btnNav {
+    background: var(--blue) !important;
+    color: var(--white) !important;
+    padding: 0.6rem 1.4rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background var(--transition), transform var(--transition) !important;
+    white-space: nowrap;
+}
+
+.btnNav:hover {
+    background: var(--blue-bright) !important;
+    transform: translateY(-1px);
+}
+
+/* ───────────── HAMBURGER ───────────── */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 1100;
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--navy);
+    border-radius: 2px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transform-origin: center;
+}
+
+.hamburgerOpen span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.hamburgerOpen span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.hamburgerOpen span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ───────────── MOBILE DRAWER ───────────── */
+.mobileDrawer {
+    display: none;
+}
+
+.mobileBackdrop {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .navLinks {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .megaMenu {
+        display: none !important;
+    }
+
+    .mobileDrawer {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 320px;
+        max-width: 85vw;
+        height: 100vh;
+        height: 100dvh;
+        background: var(--white);
+        z-index: 1050;
+        padding: 5.5rem 2rem 3rem;
+        transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        box-shadow: -16px 0 64px rgba(10, 22, 40, 0.08);
+        overflow-y: auto;
+    }
+
+    .mobileDrawerOpen {
+        right: 0;
+    }
+
+    .mobileBackdrop {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(10, 22, 40, 0.4);
+        z-index: 1040;
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+    }
+
+    .mobileLinks {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .mobileLink {
+        display: block;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--navy);
+        text-decoration: none;
+        padding: 1rem 0;
+        border-bottom: 1px solid var(--gray-100);
+        transition: color var(--transition);
+    }
+
+    .mobileLink:last-of-type {
+        border-bottom: none;
+    }
+
+    .mobileLink:hover,
+    .mobileLink:active {
+        color: var(--blue);
+    }
+
+    .mobileCta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        background: var(--blue);
+        color: var(--white);
+        padding: 1rem 2rem;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1rem;
+        margin-top: 2rem;
+        transition: all var(--transition);
+        text-align: center;
+    }
+
+    .mobileCta:hover {
+        background: var(--blue-bright);
+    }
+
+    .mobileCta svg {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+@media (max-width: 640px) {
+    .navInner {
+        padding: 0 1rem;
+    }
+}

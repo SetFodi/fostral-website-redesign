@@ -1,0 +1,278 @@
+.main {
+    min-height: 100vh;
+    padding-top: 68px;
+    background: var(--off-white);
+}
+
+.container {
+    max-width: 1200px;
+    /* Slightly wider to accommodate grids */
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Header */
+.header {
+    padding: 6rem 0 4rem;
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.sectionLabel {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 700;
+    color: var(--blue);
+    margin-bottom: 1.5rem;
+}
+
+.sectionLabel::before {
+    content: '';
+    width: 20px;
+    height: 2px;
+    background: var(--blue);
+    border-radius: 1px;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--navy);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--gray-600);
+    max-width: 760px;
+    line-height: 1.7;
+}
+
+/* Tabs layout */
+.tabsSection {
+    padding: 4rem 0;
+}
+
+.tabsLayout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 4rem;
+    align-items: flex-start;
+}
+
+.tabsList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: sticky;
+    top: 100px;
+}
+
+.tabBtn {
+    text-align: left;
+    padding: 1rem 1.25rem;
+    background: transparent;
+    border: 1px solid var(--gray-200);
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--gray-600);
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.tabBtn:hover {
+    background: var(--white);
+    color: var(--navy);
+    border-color: var(--gray-300);
+}
+
+.activeTab {
+    background: var(--navy);
+    color: var(--white);
+    border-color: var(--navy);
+    box-shadow: 0 8px 16px rgba(10, 22, 40, 0.1);
+}
+
+.activeTab:hover {
+    background: var(--navy-light);
+    color: var(--white);
+    border-color: var(--navy-light);
+}
+
+/* Content Area */
+.contentTitle {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+}
+
+.contentDescription {
+    margin-bottom: 3rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.contentDescription p {
+    font-size: 1.05rem;
+    color: var(--gray-600);
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+}
+
+.contentDescription p:last-child {
+    margin-bottom: 0;
+}
+
+.moduleGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.moduleCard {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    padding: 2rem;
+    border-radius: var(--radius);
+    position: relative;
+    transition: all var(--transition);
+}
+
+.moduleCard:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(10, 22, 40, 0.05);
+    border-color: var(--blue-glow);
+}
+
+.moduleIndicator {
+    width: 12px;
+    height: 4px;
+    background: var(--blue);
+    border-radius: 2px;
+    margin-bottom: 1rem;
+}
+
+.moduleCard h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+}
+
+.moduleCard p {
+    font-size: 0.9rem;
+    color: var(--gray-500);
+    line-height: 1.6;
+}
+
+/* Closing Section */
+.closingSection {
+    padding: 4rem 0 6rem;
+}
+
+.coherentBox {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 20px;
+    padding: 4rem;
+    text-align: center;
+}
+
+.coherentBox h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 1.5rem;
+}
+
+.coherentBox p {
+    font-size: 1.1rem;
+    color: var(--gray-600);
+    max-width: 700px;
+    margin: 0 auto 1rem;
+    line-height: 1.6;
+}
+
+.btnPrimary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--navy);
+    color: var(--white);
+    padding: 0.85rem 2rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: all var(--transition);
+}
+
+.btnPrimary:hover {
+    background: var(--blue);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+    .tabsLayout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .tabsList {
+        flex-direction: row;
+        flex-wrap: wrap;
+        position: static;
+    }
+
+    .tabBtn {
+        flex: 1;
+        text-align: center;
+        min-width: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 4rem 0 3rem;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .tabBtn {
+        min-width: 160px;
+        padding: 0.75rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .moduleGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .contentTitle {
+        font-size: 1.5rem;
+    }
+
+    .coherentBox {
+        padding: 3rem 1.5rem;
+    }
+
+    .coherentBox h2 {
+        font-size: 1.4rem;
+    }
+}
