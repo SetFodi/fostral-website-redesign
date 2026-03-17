@@ -107,3 +107,23 @@ body {
 .fade-up-d6 {
   animation: fadeUp 0.8s 0.6s ease both;
 }
+
+/* ───────────── CMS INLINE EDITING ───────────── */
+[contenteditable="true"] {
+  outline: 1px dashed transparent;
+  transition: outline-color 0.2s ease, background-color 0.2s ease;
+  border-radius: 3px;
+  cursor: text;
+  min-width: 20px;
+}
+
+[contenteditable="true"]:hover {
+  outline-color: rgba(99, 102, 241, 0.45);
+  background-color: rgba(99, 102, 241, 0.04);
+}
+
+[contenteditable="true"]:focus {
+  outline-color: rgba(99, 102, 241, 0.8);
+  background-color: rgba(99, 102, 241, 0.06);
+  outline-style: solid;
+}

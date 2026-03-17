@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import Link from 'next/link';
+import Editable from '@/components/cms/Editable';
 import styles from './Industries.module.css';
 
 const industriesData = [
@@ -59,17 +60,11 @@ export default function IndustriesPage() {
             const hash = window.location.hash.replace('#', '');
             if (hash && industriesData.find(ind => ind.id === hash)) {
                 setActiveTab(hash);
-                // Scroll to tabs section
-                const element = document.getElementById('industries-content');
-                if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                }
+                document.getElementById('industries-content')?.scrollIntoView({ behavior: 'smooth' });
             }
         };
 
-        // Initial check
         handleHashChange();
-
         window.addEventListener('hashchange', handleHashChange);
         return () => window.removeEventListener('hashchange', handleHashChange);
     }, []);
@@ -80,24 +75,22 @@ export default function IndustriesPage() {
         <>
             <Navbar />
             <main className={styles.main}>
-                {/* Header Section */}
                 <section className={styles.header}>
                     <div className={styles.container}>
-                        <div className={styles.sectionLabel}>Industries</div>
-                        <h1 className={styles.title}>Technology shaped around<br />real industries</h1>
-                        <p className={styles.subtitle}>
+                        <Editable k="industries.header.badge" as="div" className={styles.sectionLabel}>Industries</Editable>
+                        <h1 className={styles.title}>
+                            <Editable k="industries.header.title">Technology shaped around<br />real industries</Editable>
+                        </h1>
+                        <Editable k="industries.header.subtitle" as="p" className={styles.subtitle}>
                             Every industry operates with its own operational rhythm, regulatory environment, and business logic. At Fostral, we design business management solutions that reflect these realities rather than forcing organisations to adapt to generic software structures.<br /><br />
                             Our experience spans industries where process coordination, operational visibility, and reliable data flows are essential for running the business effectively.
-                        </p>
+                        </Editable>
                     </div>
                 </section>
 
-                {/* Interactive Tabs Section */}
                 <section id="industries-content" className={styles.tabsSection} style={{ scrollMarginTop: '100px' }}>
                     <div className={styles.container}>
                         <div className={styles.tabsLayout}>
-
-                            {/* Sidebar Tabs */}
                             <div className={styles.tabsList}>
                                 {industriesData.map((ind) => (
                                     <button
@@ -106,41 +99,40 @@ export default function IndustriesPage() {
                                         onClick={() => setActiveTab(ind.id)}
                                     >
                                         <span className={styles.tabIcon}>{ind.icon}</span>
-                                        {ind.title}
+                                        <Editable k={`industries.tab.${ind.id}`}>{ind.title}</Editable>
                                     </button>
                                 ))}
                             </div>
 
-                            {/* Content Area */}
                             <div className={styles.tabContent}>
                                 {activeContent && (
                                     <div className={styles.contentCard}>
                                         <div className={styles.contentHeader}>
                                             <span className={styles.contentIcon}>{activeContent.icon}</span>
-                                            <h2>{activeContent.title}</h2>
+                                            <h2><Editable k={`industries.${activeContent.id}.title`}>{activeContent.title}</Editable></h2>
                                         </div>
 
                                         <div className={styles.contentText}>
-                                            {activeContent.description.split('\n\n').map((paragraph, idx) => (
-                                                <p key={idx}>{paragraph}</p>
-                                            ))}
+                                            <Editable k={`industries.${activeContent.id}.description`} as="div">
+                                                {activeContent.description.split('\n\n').map((paragraph, idx) => (
+                                                    <p key={idx}>{paragraph}</p>
+                                                ))}
+                                            </Editable>
                                         </div>
                                     </div>
                                 )}
                             </div>
-
                         </div>
                     </div>
                 </section>
 
-                {/* Closing CTA */}
                 <section className={styles.closingSection}>
                     <div className={styles.container}>
                         <div className={styles.closingBox}>
-                            <h2>Ready to streamline your industry operations?</h2>
-                            <p>Book a free consultation and let&apos;s map out your digital transformation.</p>
+                            <h2><Editable k="industries.closing.title">Ready to streamline your industry operations?</Editable></h2>
+                            <p><Editable k="industries.closing.description">Book a free consultation and let&apos;s map out your digital transformation.</Editable></p>
                             <Link href="/contact" className={styles.btnCta}>
-                                Contact Us
+                                <Editable k="industries.closing.cta">Contact Us</Editable>
                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 8h10M9 4l4 4-4 4" /></svg>
                             </Link>
                         </div>
