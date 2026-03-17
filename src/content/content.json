@@ -1,1 +1,10 @@
-{}
+{
+  "home": {
+    "hero": {
+      "titleAccent": "business automation"
+    },
+    "intro": {
+      "title": "Bringing clarity to\neveryday businesss"
+    }
+  }
+}
