@@ -1,10 +1,25 @@
 {
   "home": {
     "hero": {
-      "titleAccent": "business automation"
+      "titleAccent": "business automation",
+      "badge": "Enterprise Management Systems",
+      "description": "We help companies digitise operations, simplify processes, and build a software experience people actually enjoy using",
+      "stat1Label": "Implementations",
+      "stat3Value": "6",
+      "stat3Label": "Countries",
+      "stat2Label": "<div>Transactions</div>",
+      "stat4Value": "94"
     },
     "intro": {
       "title": "Bringing clarity to\neveryday businesss"
+    }
+  },
+  "footer": {
+    "legal": "Fostral MB, Raugyklos g. 17-R78,<br>LT-01140 Vilnius, Lithuania<br>Reg. No. 305508450 · VAT LT100013047212<br><br>Skywish OÜ, Mõisa 4,<br>13522 Tallinn, Estonia<br>Reg. No. 1202605"
+  },
+  "solutions": {
+    "header": {
+      "subtitle": "At Fostral, we design and implement business management environments built on proven technology platforms. These solutions allow organisations to centralise operations, automate workflows, connect systems, and gain full visibility over their activities.<br><br>Our approach combines world-class software ecosystems with tailored extensions, allowing each solution to reflect the real operational needs of the organisation."
     }
   }
 }
