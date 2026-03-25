@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import LanguageSwitcher from './LanguageSwitcher';
 import styles from './Navbar.module.css';
 
 export default function Navbar() {
@@ -148,12 +149,15 @@ export default function Navbar() {
                     <Link href="/industries" className={styles.navLink} onMouseEnter={() => setActiveMenu(null)}>Industries</Link>
                     <Link href="/company" className={styles.navLink} onMouseEnter={() => setActiveMenu(null)}>Company</Link>
 
+                    <LanguageSwitcher variant="desktop" />
+
                     <Link href="/contact" className={styles.btnNav}>Book a Call</Link>
                 </div>
 
                 {/* Mobile Drawer */}
                 <div className={`${styles.mobileDrawer} ${mobileOpen ? styles.mobileDrawerOpen : ''}`}>
                     <div className={styles.mobileLinks}>
+                        <LanguageSwitcher variant="mobile" />
                         <Link href="/services" className={styles.mobileLink} onClick={() => setMobileOpen(false)}>Services</Link>
                         <Link href="/solutions" className={styles.mobileLink} onClick={() => setMobileOpen(false)}>Solutions</Link>
                         <Link href="/industries" className={styles.mobileLink} onClick={() => setMobileOpen(false)}>Industries</Link>
